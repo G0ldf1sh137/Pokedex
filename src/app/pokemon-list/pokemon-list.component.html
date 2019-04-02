@@ -1,0 +1,14 @@
+<div>
+  <p>Page:    {{ page }}</p>
+  <p>Records: {{ offset + 1}} to {{ offset + limit + 1 }}</p>
+</div>
+
+<button mat-button (click)="prevPage()">Prev</button>
+<button mat-button (click)="nextPage()">Next</button>
+<mat-nav-list>
+  <a mat-list-item *ngFor="let pokemon of pokemonList$" href="{{ pokemon.url}} ">
+    <span>ID: </span>
+    <span></span>
+    <span> {{ pokemon.name | uppercase }}</span>
+  </a>
+</mat-nav-list>
